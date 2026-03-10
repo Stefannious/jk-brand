@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useWishlist } from '../context/WishlistContext'
 import { useSearch } from '../context/SearchContext'
+import { useAuth } from '../context/AuthContext'
 import { products } from '../data/products'
 
 const navItems = [
@@ -28,6 +29,7 @@ export default function Header() {
   const { totalCount, openCart } = useCart()
   const { count: wishCount } = useWishlist()
   const { open: openSearch } = useSearch()
+  const { user } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMega, setActiveMega] = useState<string | null>(null)
@@ -144,7 +146,7 @@ export default function Header() {
               </button>
 
               {/* Account */}
-              <button onClick={() => navigate('/account')} className="p-1 text-graphite hover:text-ink transition-colors hidden md:block" aria-label="Аккаунт">
+              <button onClick={() => navigate(user ? '/account' : '/login')} className="p-1 text-graphite hover:text-ink transition-colors hidden md:block" aria-label="Аккаунт">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />

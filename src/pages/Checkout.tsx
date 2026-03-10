@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { sendOrderToTelegram } from '../services/telegram'
+import { supabase } from '../services/supabase'
+import { useAuth } from '../context/AuthContext'
 
 // ─── helpers ────────────────────────────────────────────────
 const fmt = (n: number) =>
@@ -166,6 +168,7 @@ type DeliveryMethod = 'courier' | 'pickup' | 'post'
 
 export default function Checkout() {
   const { items, totalPrice, clearCart } = useCart()
+  const { user } = useAuth()
   const navigate = useNavigate()
 
   // Contact
@@ -263,6 +266,22 @@ export default function Checkout() {
       deliveryCost,
       total,
     }).catch(() => {})
+
+    // Save order to Supabase
+    if (user) {
+      supabase.from('orders').insert({
+        user_id: user.id,
+        order_number: orderId,
+        status: 'Новый',
+        items: items.map(i => ({ name: i.product.name, size: i.size, qty: i.quantity, price: i.product.price })),
+        subtotal,
+        delivery_cost: deliveryCost,
+        total,
+        delivery_type: delivery,
+        payment_type: method,
+        address: address || city || null,
+      }).then(() => {}).catch(() => {})
+    }
 
     // Online payment via YooKassa (card or sbp)
     if (method === 'card' || method === 'sbp') {

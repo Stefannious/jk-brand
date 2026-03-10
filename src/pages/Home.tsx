@@ -93,7 +93,6 @@ export default function Home() {
               {[
                 ['↻', 'Снимите рукава', 'Куртка → жилет'],
                 ['◈', 'Снимите капюшон', 'Меняйте силуэт'],
-                ['⊕', 'Разделите слои', 'Два изделия в одном'],
               ].map(([icon, title, desc]) => (
                 <div key={title} className="flex gap-4 py-4 border-b border-cream/10">
                   <span className="text-cream/25 text-lg w-6 flex-shrink-0 mt-0.5">{icon}</span>
