@@ -280,7 +280,7 @@ export default function Checkout() {
         delivery_type: delivery,
         payment_type: method,
         address: address || city || null,
-      }).then(() => {}).catch(() => {})
+      }).then(() => {}).catch((_e: unknown) => {})
     }
 
     // Online payment via YooKassa (card or sbp)
