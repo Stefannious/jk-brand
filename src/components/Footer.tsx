@@ -113,6 +113,7 @@ export default function Footer() {
         <div className="mt-14 pt-6 border-t border-cream/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex flex-wrap gap-6">
             <p className="font-body text-xs text-cream/25">© {new Date().getFullYear()} JK. Все права защищены.</p>
+            <p className="font-body text-xs text-cream/20">ИП Кавали Джамила Зурабовна · ИНН 504417517321 · ОГРНИП 321774600138780</p>
             <a href="mailto:Jjjako@mail.ru" className="font-body text-xs text-cream/40 hover:text-cream/70 transition-colors">
               Jjjako@mail.ru
             </a>

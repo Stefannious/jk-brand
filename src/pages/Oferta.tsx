@@ -40,6 +40,7 @@ export default function Oferta() {
         <section>
           <h2 className="font-body text-[11px] uppercase tracking-widests text-ink mb-3">7. Контакты</h2>
           <p>Email: <a href="mailto:Jjjako@mail.ru" className="text-ink border-b border-ink/30">Jjjako@mail.ru</a> · Телефон: <a href="tel:+79256337619" className="text-ink border-b border-ink/30">+7 (925) 633-76-19</a> · Москва, Россия</p>
+          <p className="mt-3">ИП Кавали Джамила Зурабовна · ИНН: 504417517321 · ОГРНИП: 321774600138780</p>
         </section>
       </div>
 
