@@ -194,8 +194,8 @@ export default function Home() {
             <p className="font-body text-[10px] uppercase tracking-widest text-gray-mid mb-2">Наш стиль</p>
             <h2 className="section-title">Вдохновение</h2>
           </div>
-          <a href="#" className="font-body text-[11px] uppercase tracking-widest text-graphite hover:text-ink border-b border-graphite pb-0.5 hidden md:block">
-            @jk_brand
+          <a href="https://www.instagram.com/jamila_kavali?igsh=ZjU3NjJmcTN0cmF3" target="_blank" rel="noopener noreferrer" className="font-body text-[11px] uppercase tracking-widest text-graphite hover:text-ink border-b border-graphite pb-0.5 hidden md:block">
+            @jamila_kavali
           </a>
         </div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2">

@@ -1,4 +1,3 @@
-// ⚙️ ЗАМЕНИ ЭТИ ЗНАЧЕНИЯ НА СВОИ:
 const BOT_TOKEN = '8665396732:AAFUOZu31FwKwu8YM5jGvZOyojWONwanUD0'
 const CHAT_ID = '1632225241'
 
@@ -41,8 +40,7 @@ export async function sendOrderToTelegram(order: OrderData): Promise<boolean> {
     ? `\n📍 Адрес: ${order.city || ''}${order.address ? ', ' + order.address : ''}`
     : ''
 
-  const message = `
-🛍 <b>НОВЫЙ ЗАКАЗ ${order.orderId}</b>
+  const message = `🛍 <b>НОВЫЙ ЗАКАЗ ${order.orderId}</b>
 
 👤 <b>Покупатель:</b>
   Имя: ${order.name}
@@ -59,11 +57,11 @@ ${itemsText}
 
 🚀 <b>Доставка:</b> ${deliveryLabel[order.delivery] || order.delivery}${addressLine}
 
-💳 <b>Оплата:</b> ${paymentLabel[order.payment] || order.payment}
-`.trim()
+💳 <b>Оплата:</b> ${paymentLabel[order.payment] || order.payment}`
 
   try {
-    const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
+    const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -73,6 +71,7 @@ ${itemsText}
       }),
     })
     const data = await res.json()
+    console.log('Telegram response:', data)
     return data.ok === true
   } catch (e) {
     console.error('Telegram send error:', e)

@@ -85,11 +85,11 @@ export default function Footer() {
               One Piece.<br />Endless Forms.
             </p>
             <div className="flex gap-4 mt-6">
-              {['IG', 'TG', 'VK'].map(s => (
-                <button key={s} className="font-body text-[10px] tracking-wider text-cream/40 hover:text-cream transition-colors border border-cream/20 px-2.5 py-1 hover:border-cream/50">
-                  {s}
-                </button>
-              ))}
+              <a href="https://www.instagram.com/jamila_kavali?igsh=ZjU3NjJmcTN0cmF3" target="_blank" rel="noopener noreferrer" className="font-body text-[10px] tracking-wider text-cream/40 hover:text-cream transition-colors border border-cream/20 px-2.5 py-1 hover:border-cream/50">
+                IG
+              </a>
+              <button className="font-body text-[10px] tracking-wider text-cream/40 hover:text-cream transition-colors border border-cream/20 px-2.5 py-1 hover:border-cream/50">TG</button>
+              <button className="font-body text-[10px] tracking-wider text-cream/40 hover:text-cream transition-colors border border-cream/20 px-2.5 py-1 hover:border-cream/50">VK</button>
             </div>
           </div>
 
