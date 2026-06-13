@@ -86,7 +86,7 @@ export default function Home() {
             </h2>
             <p className="font-body text-sm text-cream/55 leading-relaxed max-w-sm mb-10">
               Каждое изделие JK — это система. Рукава крепятся на кнопках,
-              капюшон снимается, слои разделяются. Один предмет гардероба
+              капюшон снимается. Один предмет гардероба
               становится двумя, тремя и даже четырьмя разными образами.
             </p>
             <div className="space-y-0 mb-10 border-t border-cream/10 max-w-sm">
@@ -166,6 +166,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Coming soon — замшевый рукав */}
+      <section className="bg-cream">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-10 py-16 md:py-24">
+          <div className="grid md:grid-cols-12 gap-px bg-gray-mid/40 overflow-hidden">
+
+            {/* Фото-тизер */}
+            <div className="md:col-span-7 relative overflow-hidden aspect-[4/5] md:aspect-auto md:min-h-[640px] bg-white group">
+              <img
+                src="/sleeve-2.jpg"
+                alt="Замшевый рукав JK"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/5 to-transparent" />
+              <div className="absolute top-6 left-6 md:top-8 md:left-8">
+                <span className="inline-block bg-cream/90 backdrop-blur text-ink font-body text-[10px] uppercase tracking-widest px-4 py-2">
+                  Скоро в продаже
+                </span>
+              </div>
+              <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
+                <h2 className="font-display text-4xl md:text-6xl font-light text-cream leading-none">
+                  Замшевый<br /><em>рукав</em>
+                </h2>
+              </div>
+            </div>
+
+            {/* Текст */}
+            <div className="md:col-span-5 bg-graphite text-cream flex flex-col justify-center px-10 md:px-14 py-14 md:py-20">
+              <p className="font-body text-[10px] uppercase tracking-widest text-cream/35 mb-6">Новая деталь</p>
+              <div className="space-y-5 font-body text-sm text-cream/60 leading-relaxed">
+                <p>
+                  Мы готовим к запуску новую деталь, которая позволит взглянуть
+                  на ваш бомбер по-новому — сменный замшевый рукав.
+                </p>
+                <p>
+                  Теперь один бомбер сможет легко менять свой характер и стиль.
+                  Благодаря системе сменных рукавов вы сможете адаптировать образ
+                  под настроение.
+                </p>
+                <p>
+                  Благородная фактура натуральной замши добавляет образу глубину,
+                  статус и индивидуальность, а быстрая замена делает гардероб
+                  ещё более функциональным.
+                </p>
+              </div>
+              <div className="border-t border-cream/10 mt-8 pt-6">
+                <p className="font-display text-xl md:text-2xl font-light italic text-cream/90">
+                  Один бомбер — множество вариантов.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Brand values */}
       <section className="bg-gray-light py-20 md:py-24">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-10">
@@ -199,12 +254,12 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
           {[
+            '/sleeve-1.jpg',
+            '/sleeve-2.jpg',
+            '/sleeve-3.jpg',
             '/bomber-beige-1.jpg',
-            '/sweat-navy-5.jpg',
             '/bomber-black-4.jpg',
-            '/sweat-beige-6.jpg',
-            '/bomber-navy-2.jpg',
-            '/sweat-black-3.jpg',
+            '/sweat-navy-5.jpg',
           ].map((src, i) => (
             <div key={i} className="aspect-square overflow-hidden group cursor-pointer">
               <img src={src} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
